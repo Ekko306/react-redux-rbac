@@ -1,0 +1,59 @@
+.container{
+  width: 100%;
+}
+
+.emergency{
+  background: #ffa500;
+}
+
+.no-access-text{
+  color: #F00;
+}
+
+.permission-text{
+  font-weight: bold;
+}
+
+.shotdown{
+  background: #f00;
+}
+
+.stats__item{
+  margin-bottom: 1.5rem;
+}
+
+.stats__badge{
+  background: #2e8b57;
+}
+
+.username{
+  font-weight: bold;
+}
+
+.user-permission-text{
+  color: #FFF;
+}
+
+.example-app-container{
+  flex: 1;
+  background: #FFC;
+  padding-top: 15px;
+}
+
+.container {
+  flex: 1;
+  background-color: #FFC;
+  padding-vertical: 15;
+}
+
+
+.noAccessText {
+  color: #F00;
+}
+
+.countryWarning {
+  padding: 15px;
+  margin: 15px;
+  border-width: 2px;
+  border-color: #F00;
+}
