@@ -9,7 +9,7 @@ import { connect } from "react-redux"
 //   ]
 // allowedPermissions 可能是 ["read:stats"] 这种
 const checkPermissions = (userPermissions, allowedPermissions) => {
-    // 默认情况
+    // 默认情况 不要求权限 所有的都允许
     if (allowedPermissions.length === 0) {
         return true
     }
@@ -29,8 +29,10 @@ const AccessControl = ({
 }) => {
     let permitted
     if (accessCheck) {
+        // 是否登录判定 + (额外权限判定)
         permitted = accessCheck(extraAccessData, user) && checkPermissions(userPermissions, allowedPermissions);
     } else {
+        // 普通权限判定
         permitted = checkPermissions(userPermissions, allowedPermissions);
     }
     if (permitted) {

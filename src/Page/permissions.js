@@ -1,11 +1,11 @@
 const userSafetyInspector = {
-    name: "Safety Inspector",
+    name: "美国安全检查员",
     permissions: ["read:stats"],
     nationality: "USA"
 };
 
 const userNKScientist = {
-    name: "North Korean Scientist",
+    name: "朝鲜反应堆管理者",
     permissions: [
         "read:stats",
         "control:reactor",

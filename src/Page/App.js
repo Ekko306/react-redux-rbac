@@ -22,38 +22,43 @@ function App() {
       <div>
          用户信息：{JSON.stringify(userInfo)}
       </div>
-        <button onClick={()=> dispatch(loginUser(userNKScientist))}>登录信息</button>
-          <br></br>
-
-
 
           <div className="example-app-container">
               <div>
                   {!userInfo ? (
                       <div>
                           <button onClick={() => dispatch(loginUser(userNKScientist))}>
-                              Login as Plant Manager
+                              反应堆管理者登录
                           </button>
                           <button onClick={() => dispatch(loginUser(userSafetyInspector))}>
-                              Login as Safety Inspector
+                              安全员登录
                           </button>
                       </div>
                   ) : (
-                      <button onClick={() =>dispatch(loginUser())}>Logout</button>
+                      <button onClick={() =>dispatch(loginUser())}>登出</button>
                   )}
               </div>
 
               <UserDetails user={userInfo} />
+              <div>虚线框才是权限管理区域：</div>
 
+              {/*// 这里是最外面一层 还没有登录 优先级更高的是USA判断 还没有到permission判断 permission判断需要登录 但是store为null 会报错 所以分为两级 这个是登录组件写在一起 如果login分开 鉴权组件写在另一页没有和这个问题*/}
+              {/*// 1. 未登录*/}
+              {/*// 2. 登陆了*/}
+              {/*//   1. 登陆了管理者权限*/}
+              {/*//   2. 登陆了观察员权限*/}
+              <div style={{border: '5px dotted pink'}}>
               <AccessControl
                   extraAccessData={{ allowedNationality: "USA" }}
                   accessCheck={(extraAccessData, user) =>
-                      user && user.nationality === extraAccessData.allowedNationality
+                      user // user 用来判断是否登录，
+                      &&
+                      user.nationality === extraAccessData.allowedNationality  // extraAccessData 判断额外增添条件
                   }
                   renderNoAccess={() => (
                       <div className="countryWarning">
                           <div className="noAccessText">
-                              Only Nuclear engineers from the USA 🇺🇸 can access this system.
+                              您需要登录并且只有美国🇺🇸的原子能工程师可以操作这个系统。
                           </div>
                       </div>
                   )}
@@ -83,8 +88,8 @@ function App() {
                       <ShutdownPanel />
                   </AccessControl>
               </AccessControl>
-              
-              
+
+              </div>
               
               
           </div>

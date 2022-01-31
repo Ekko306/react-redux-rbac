@@ -3,8 +3,8 @@ import React from 'react';
 const EmergencyAlertPanel = () => {
   return (
     <div className="container">
-      <h3>Emergency</h3>
-      <button className="emergency" onClick={() => alert('Triggered Emergency Alert!!!')}>Broadcast Emergency Alert</button>
+      <h3>紧急情况</h3>
+      <button className="emergency" onClick={() => alert('触发紧急情况!!!')}>广播紧急情况</button>
     </div>
   );
 };

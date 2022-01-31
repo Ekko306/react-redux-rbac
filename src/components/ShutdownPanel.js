@@ -3,8 +3,8 @@ import React from 'react';
 const ShutdownPanel = () => {
   return (
     <div className="container">
-      <h3>Reactor</h3>
-        <button className="shotdown" onClick={() => alert('Reactors shutting down...')}>Shutdown Reactor</button>
+      <h3>反应堆</h3>
+        <button className="shotdown" onClick={() => alert('反应堆正在关闭...')}>关闭反应堆</button>
     </div>
   );
 };
