@@ -9,7 +9,7 @@ import { connect } from "react-redux"
 //   ]
 // allowedPermissions 可能是 ["read:stats"] 这种
 const checkPermissions = (userPermissions, allowedPermissions) => {
-    // 默认情况 不要求权限 所有的都允许
+    // allowedPermissions意思是要求的权限 为0表示都允许
     if (allowedPermissions.length === 0) {
         return true
     }
